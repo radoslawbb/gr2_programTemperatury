@@ -3,6 +3,7 @@ using namespace std;
 double pamiec[100] = { 0 };
 char pamiecZ[100] = { 0 };
 int dataCounter = 0;
+int ileC = 0, ileF = 0, ileK = 0;
 
 int check(float temp, char stopnie) {
     switch (stopnie) {
@@ -50,15 +51,23 @@ float FtoC() {
         system("pause");
     }
     else {
-        float wynik = (5.0 / 9.0) * (stopnie - 32.0);
-        cout << "F: " << stopnie << " C: " << wynik << endl;
-        pamiec[dataCounter] = stopnie;
-        pamiecZ[dataCounter] = 'F';
-        pamiec[dataCounter + 1] = wynik;
-        pamiecZ[dataCounter + 1] = 'C';
-        dataCounter += 2;
-        system("pause");
-        return wynik;
+        if (dataCounter <= 98) {
+            float wynik = (5.0 / 9.0) * (stopnie - 32.0);
+            cout << "F: " << stopnie << " C: " << wynik << endl;
+            pamiec[dataCounter] = stopnie;
+            pamiecZ[dataCounter] = 'F';
+            pamiec[dataCounter + 1] = wynik;
+            pamiecZ[dataCounter + 1] = 'C';
+            dataCounter += 2;
+            ileF++;
+            system("pause");
+            return wynik;
+        }
+        else {
+            cout << "Przekroczono limit" << endl;
+            system("pause");
+            return 0;
+        }
     }
 }
 
@@ -70,15 +79,23 @@ float FtoK() {
         system("pause");
     }
     else {
-        float wynik = (5.0 / 9.0) * (stopnie + 459.67);
-        cout << "F: " << stopnie << " K: " << wynik << endl;
-        pamiec[dataCounter] = stopnie;
-        pamiecZ[dataCounter] = 'F';
-        pamiec[dataCounter + 1] = wynik;
-        pamiecZ[dataCounter + 1] = 'K';
-        dataCounter += 2;
-        system("pause");
-        return wynik;
+        if (dataCounter <= 98) {
+            float wynik = (5.0 / 9.0) * (stopnie + 459.67);
+            cout << "F: " << stopnie << " K: " << wynik << endl;
+            pamiec[dataCounter] = stopnie;
+            pamiecZ[dataCounter] = 'F';
+            pamiec[dataCounter + 1] = wynik;
+            pamiecZ[dataCounter + 1] = 'K';
+            dataCounter += 2;
+            ileF++;
+            system("pause");
+            return wynik;
+        }
+        else {
+            cout << "Przekroczono limit" << endl;
+            system("pause");
+            return 0;
+        }
     }
 }
 
@@ -90,15 +107,23 @@ float CtoF() {
         system("pause");
     }
     else {
-        float wynik = stopnie * (9.0 / 5.0) + 32.0;
-        cout << "C: " << stopnie << " F: " << wynik << endl;
-        pamiec[dataCounter] = stopnie;
-        pamiecZ[dataCounter] = 'C';
-        pamiec[dataCounter + 1] = wynik;
-        pamiecZ[dataCounter + 1] = 'F';
-        dataCounter += 2;
-        system("pause");
-        return wynik;
+        if (dataCounter <= 98) {
+            float wynik = stopnie * (9.0 / 5.0) + 32.0;
+            cout << "C: " << stopnie << " F: " << wynik << endl;
+            pamiec[dataCounter] = stopnie;
+            pamiecZ[dataCounter] = 'C';
+            pamiec[dataCounter + 1] = wynik;
+            pamiecZ[dataCounter + 1] = 'F';
+            dataCounter += 2;
+            ileC++;
+            system("pause");
+            return wynik;
+        }
+        else {
+            cout << "Przekroczono limit" << endl;
+            system("pause");
+            return 0;
+        }
     }
 }
 
@@ -110,15 +135,23 @@ float CtoK() {
         system("pause");
     }
     else {
-        float wynik = stopnie + 273.15;
-        cout << "C: " << stopnie << " K: " << wynik << endl;
-        pamiec[dataCounter] = stopnie;
-        pamiecZ[dataCounter] = 'C';
-        pamiec[dataCounter + 1] = wynik;
-        pamiecZ[dataCounter + 1] = 'K';
-        dataCounter += 2;
-        system("pause");
-        return wynik;
+        if (dataCounter <= 98) {
+            float wynik = stopnie + 273.15;
+            cout << "C: " << stopnie << " K: " << wynik << endl;
+            pamiec[dataCounter] = stopnie;
+            pamiecZ[dataCounter] = 'C';
+            pamiec[dataCounter + 1] = wynik;
+            pamiecZ[dataCounter + 1] = 'K';
+            dataCounter += 2;
+            ileC++;
+            system("pause");
+            return wynik;
+        }
+        else {
+            cout << "Przekroczono limit" << endl;
+            system("pause");
+            return 0;
+        }
     }
 }
 
@@ -130,15 +163,23 @@ float KtoC() {
         system("pause");
     }
     else {
-        float wynik = stopnie - 273.15;
-        cout << "K: " << stopnie << " C: " << wynik << endl;
-        pamiec[dataCounter] = stopnie;
-        pamiecZ[dataCounter] = 'K';
-        pamiec[dataCounter + 1] = wynik;
-        pamiecZ[dataCounter + 1] = 'C';
-        dataCounter += 2;
-        system("pause");
-        return wynik;
+        if (dataCounter <= 98) {
+            float wynik = stopnie - 273.15;
+            cout << "K: " << stopnie << " C: " << wynik << endl;
+            pamiec[dataCounter] = stopnie;
+            pamiecZ[dataCounter] = 'K';
+            pamiec[dataCounter + 1] = wynik;
+            pamiecZ[dataCounter + 1] = 'C';
+            dataCounter += 2;
+            ileK++;
+            system("pause");
+            return wynik;
+        }
+        else {
+            cout << "Przekroczono limit" << endl;
+            system("pause");
+            return 0;
+        }
     }
 }
 
@@ -150,15 +191,23 @@ float KtoF() {
         system("pause");
     }
     else {
-        float wynik = stopnie * (9.0 / 5.0) - 459.67;
-        cout << "K: " << stopnie << " F: " << wynik << endl;
-        pamiec[dataCounter] = stopnie;
-        pamiecZ[dataCounter] = 'K';
-        pamiec[dataCounter + 1] = wynik;
-        pamiecZ[dataCounter + 1] = 'F';
-        dataCounter += 2;
-        system("pause");
-        return wynik;
+        if (dataCounter <= 98) {
+            float wynik = stopnie * (9.0 / 5.0) - 459.67;
+            cout << "K: " << stopnie << " F: " << wynik << endl;
+            pamiec[dataCounter] = stopnie;
+            pamiecZ[dataCounter] = 'K';
+            pamiec[dataCounter + 1] = wynik;
+            pamiecZ[dataCounter + 1] = 'F';
+            dataCounter += 2;
+            ileK++;
+            system("pause");
+            return wynik;
+        }
+        else {
+            cout << "Przekroczono limit" << endl;
+            system("pause");
+            return 0;
+        }
     }
 }
 
@@ -180,4 +229,78 @@ void menu() {
     cout << "6 - przelicz Kelwin -> Fahr" << endl;
     cout << "7 - pokaz historie" << endl;
     cout << "8 - zakoncz dzaialanie programu" << endl;
+}
+
+void wyborHistorii() {
+    int poz;
+    cout << "Wybierz pozycje: " << endl;
+    cout << "1. Tylko C -> inne" << endl;
+    cout << "2. Tylko F -> inne" << endl;
+    cout << "3. Tylko K -> inne" << endl;
+    cout << "4. Cala historia" << endl;
+    cin >> poz;
+
+    switch (poz) {
+    case 1:
+        if (ileC > 0) {
+            int licz = 0;
+            for (int i = 0; i < dataCounter / 2; i++) {
+                if (pamiecZ[licz] == 'C') {
+                    cout << "<" << i + 1 << "> " << pamiec[licz] << pamiecZ[licz] << " = " << pamiec[licz + 1] << pamiecZ[licz + 1] << endl;
+                } 
+                licz += 2;
+            }
+        }
+        else {
+            cout << "brak danych" << endl;
+        }
+
+        system("pause");
+        break;
+    case 2:
+        if (ileF > 0) {
+            int licz = 0;
+            for (int i = 0; i < dataCounter / 2; i++) {
+                if (pamiecZ[licz] == 'F') {
+                    cout << "<" << i + 1 << "> " << pamiec[licz] << pamiecZ[licz] << " = " << pamiec[licz + 1] << pamiecZ[licz + 1] << endl;
+                }
+                licz += 2;
+            }
+        }
+        else {
+            cout << "brak danych" << endl;
+        }
+
+        system("pause");
+        break;
+    case 3:
+        if (ileK > 0) {
+            int licz = 0;
+            for (int i = 0; i < dataCounter / 2; i++) {
+                if (pamiecZ[licz] == 'K') {
+                    cout << "<" << i + 1 << "> " << pamiec[licz] << pamiecZ[licz] << " = " << pamiec[licz + 1] << pamiecZ[licz + 1] << endl;
+                }
+                licz += 2;
+            }
+        }
+        else {
+            cout << "brak danych" << endl;
+        }
+
+        system("pause");
+        break;
+    case 4:
+        if (ileC == 0 && ileK == 0 && ileF == 0) {
+            cout << "brak danych" << endl;
+
+            system("pause");
+        }
+        else {
+            pokazHistorie();
+        }
+        break;
+    default:
+        break;
+    }
+    
 }

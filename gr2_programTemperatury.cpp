@@ -37,7 +37,9 @@ int main()
             KtoF();
             break;
         case 7:
-            pokazHistorie();
+            system("cls");
+            wyborHistorii();
+            //pokazHistorie();
             break;
         default:
             return 0;
