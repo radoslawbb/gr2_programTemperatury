@@ -3,15 +3,18 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <cstdlib>
+#include <ctime>
 #include "headerFile.h"
 using namespace std;
 
 int main()
 {
+    srand(time(NULL));
     while (1) {
         system("cls");
         menu();
-
+        
         int opcja;
 
         cout << "Wybierz opcje: ";
@@ -37,9 +40,17 @@ int main()
             KtoF();
             break;
         case 7:
+            usunZHistorii();
+            break;
+        case 8:
+            modHis();
+            break;
+        case 9:
+            losHis();
+            break;
+        case 10:
             system("cls");
             wyborHistorii();
-            //pokazHistorie();
             break;
         default:
             return 0;
