@@ -458,7 +458,7 @@ void losHis() {
         cin.clear();
         cin.ignore(10000, '\n');
     }
-    if (ilosc > (100 - dataCounter*2)) {
+    if (dataCounter+ilosc*2 > 100) {
         cout << "Podana liczba przekracza zakres tablicy" << endl;
         cout << "Czy chcesz wygenerowac tyle wpisow ile zostalo miejsca? (T/N): ";
         cin >> znak;
